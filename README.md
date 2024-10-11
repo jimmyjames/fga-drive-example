@@ -2,6 +2,18 @@
 
 This is a fork of the Google drive-style application used to demonstrate how to use OpenFGA or Okta FGA to handle fine-grained authorization on a per-resource level. It has been forked to experiment with OpenTelemetry to determine if zero-code instrumentation for tracing with Otel would be useful for customers.
 
+## Tracing findings (WIP)
+
+### Current findings
+
+- tracing can be added using the `@opentelemetry/auto-instrumentations-node` and configuring it. See `src/instrumentation.node.ts`.
+- tracing is configured to use the service `fga-app`
+- tracing spans can be edited and attributes added in either a pre- or post- request hook, however there is no access to the request body (which means we cannot add things like check request body info such as tuples, etc)
+
+### TODO
+
+- see if we can integrate tracing from this sample app to OpenFGA by using the same service or propogating the trace ID
+
 ## 1. Getting Started
 
 Copy the `.env.sample` file to `.env.local`, and fill in the missing environment variables:
