@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NEXT_OTEL_VERBOSE=1 OTEL_SERVICE_NAME=fga-app next dev -p 3010",
     "build": "next build",
-    "start": "next start",
+    "start": "NEXT_OTEL_VERBOSE=1 OTEL_SERVICE_NAME=fga-app next start -p 3010",
     "lint": "next lint"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",
     "@openfga/sdk": "^0.3.3",
+    "@opentelemetry/api": "^1.7.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.47.0",
+    "@opentelemetry/exporter-metrics-otlp-proto": "^0.52.0",    
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
@@ -19,6 +22,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@vercel/kv": "^1.0.1",
+    "@vercel/otel": "^1.8.3",
     "ai": "^3.0.9",
     "auth0": "^4.3.1",
     "class-variance-authority": "^0.7.0",
