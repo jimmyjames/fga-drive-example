@@ -1,20 +1,6 @@
 # Google Drive-style application with FGA
 
-This is a simplified Google Drive-style application to demonstrate how to use [OpenFGA](https://openfga.dev) or [Okta FGA](https://fga.dev) to handle Fine Grained Authorization (FGA) on a per-resource level.
-
-A user can log in, add files (pictures only), and create folders. Uploaded files are only visible to them by defaullt. They can choose to either share a file directly with other users or share folders (or subfolders), and all files contained within them will be shared automatically. Files can be shared with other users available in the Auth0 tenant; the application will look for them based on their email address.
-
-This demo uses both Auth0 ([create a free account here](https://auth0.com)), and either [OpenFGA](https://openfga.dev) or its hosted and managed version [Okta FGA](https://fga.dev).
-
-> [!NOTE]
-> If you prefer using a [OpenFGA](https://openfga.dev), switch to the branch `feature/openfga`
-
-The data is stored in a [Vercel KV store](https://vercel.com/docs/storage/vercel-kv).
-
-> [!NOTE]
-> If you prefer using a PostgreSQL Database, switch to the branch `feature/postgress`
-
-![A preview of the demo application showing a Google Drive-style interface](./preview.png)
+This is a fork of the Google drive-style application used to demonstrate how to use OpenFGA or Okta FGA to handle fine-grained authorization on a per-resource level. It has been forked to experiment with OpenTelemetry to determine if zero-code instrumentation for tracing with Otel would be useful for customers.
 
 ## 1. Getting Started
 
